@@ -82,3 +82,14 @@ h1 {
     transform: translateY(0px);
   }
 }
+
+.login-option {
+  margin-top: 20px;
+  text-align: center;
+}
+.login-option a {
+  text-decoration: none;
+}
+.login-option a:hover {
+  text-decoration: underline;
+}

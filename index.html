@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - 403 Forbidden</title>
+  <title>Access Denied</title>
   <link rel="stylesheet" href="./style.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const triggerLogout = document.getElementById("triggerLogout");
 
+      triggerLogout.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        // Send a message to the parent window to trigger logout
+        window.parent.postMessage("logout", "*");
+      });
+    });
+  </script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="lock"></div>
-<div class="message">
-  <h1>Access to this page is restricted</h1>
-  <p>Please check with the site admin if you believe this is a mistake.</p>
-</div>
-<!-- partial -->
-  
+  <div class="lock"></div>
+  <div class="message">
+    <h1>Access to this page is restricted</h1>
+    <p>Please check with the site admin if you believe this is a mistake.</p>
+  </div>
+  <div class="login-option">
+    <a href="#" id="triggerLogout">Log in with a different account</a>
+  </div>
 </body>
 </html>
