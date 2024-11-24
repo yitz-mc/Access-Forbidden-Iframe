@@ -83,13 +83,26 @@ h1 {
   }
 }
 
-.login-option {
+
+.outlined-button {
   margin-top: 20px;
-  text-align: center;
-}
-.login-option a {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #333; /* Primary color for border */
+  color: #333; /* Same as border for consistency */
+  border-radius: 5px;
   text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
 }
-.login-option a:hover {
-  text-decoration: underline;
+
+.outlined-button:hover {
+  transform: scale(1.04); /* Slightly enlarge button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.outlined-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Focus ring for accessibility */
 }

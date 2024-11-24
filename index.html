@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Access Denied</title>
-  <link rel="stylesheet" href="./style.css">
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const triggerLogout = document.getElementById("triggerLogout");
+  <head>
+    <meta charset="UTF-8" />
+    <title>Access Denied</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const triggerLogout = document.getElementById("triggerLogout");
 
-      triggerLogout.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default link behavior
-        // Send a message to the parent window to trigger logout
-        window.parent.postMessage("logout", "*");
+        triggerLogout.addEventListener("click", (event) => {
+          // Send a message to the parent window to trigger logout
+          window.parent.postMessage("logout", "*");
+        });
       });
-    });
-  </script>
-</head>
-<body>
-  <div class="lock"></div>
-  <div class="message">
+    </script>
+  </head>
+  <body>
+    <div class="lock"></div>
     <h1>Access to this page is restricted</h1>
     <p>Please check with the site admin if you believe this is a mistake.</p>
-  </div>
-  <div class="login-option">
-    <a href="#" id="triggerLogout">Log in with a different account</a>
-  </div>
-</body>
+    <div class="outlined-button" id="triggerLogout">
+      Log in with a different account
+    </div>
+  </body>
 </html>
